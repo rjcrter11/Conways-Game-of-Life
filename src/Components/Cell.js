@@ -9,7 +9,7 @@ const Cell = (props) => {
         <div style={{
             width: 10,
             height: 10,
-            backgroundColor: colorGenerator(grid[rows][cols], generations),
+            backgroundColor: 'black',
             border: 'solid 1px rgba(128, 128, 128, 0.25)'
         }}
             onClick={() => {
@@ -17,8 +17,16 @@ const Cell = (props) => {
                     gridCopy[rows][cols] = grid[rows][cols] ? 0 : 1;
                 })
                 setGrid(newGrid)
+                //console.log(newGrid)
             }}
         >
+            <div style={{
+                width: 8,
+                height: 8,
+                backgroundColor: colorGenerator(grid[rows][cols], generations),
+                borderRadius: '100%',
+
+            }} ></div>
         </div>
     )
 }
