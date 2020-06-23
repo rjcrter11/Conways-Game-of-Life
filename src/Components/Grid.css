@@ -1,0 +1,9 @@
+.main-grid-container {
+    width: 80%; 
+    margin: auto;
+    display: flex; 
+}
+.bottom-container {
+    display: flex; 
+    width: 100%; 
+}

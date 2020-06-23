@@ -1,12 +1,15 @@
 import React from 'react'
 import produce from 'immer'
+import { colorGenerator } from '../helperFunctions/helperFunctions'
 const Cell = (props) => {
-    const { grid, setGrid, rows, cols } = props
+    const { grid, setGrid, rows, cols, generations } = props
+
+
     return (
         <div style={{
             width: 10,
             height: 10,
-            backgroundColor: grid[rows][cols] ? 'blue' : undefined,
+            backgroundColor: colorGenerator(grid[rows][cols], generations),
             border: 'solid 1px rgba(128, 128, 128, 0.25)'
         }}
             onClick={() => {

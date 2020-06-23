@@ -1,9 +1,9 @@
 import React from 'react'
-
+import './Rules.css'
 const Rules = () => {
     return (
         <div className="main-rules-container">
-            <div>
+            <div className='rules-box'>
                 <h2>Rules</h2>
                 <ol >
                     <li>Any live cell with fewer than two live neighbours dies, as if by underpopulation.</li>
@@ -12,7 +12,7 @@ const Rules = () => {
                     <li>Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.</li>
                 </ol>
             </div>
-            <div>
+            <div className='about-box'>
                 <h3>About the Game</h3>
                 <p>
                     Many different types of patterns occur in the Game of Life,

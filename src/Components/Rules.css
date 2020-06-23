@@ -1,0 +1,23 @@
+.main-rules-container {
+    width: 50%; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2% 3%; 
+}
+
+.about-box {
+   line-height: 1.5rem;
+   text-align: left;
+   margin-top: 10%; 
+}
+.rules-box {
+    line-height: 2.5rem; 
+    text-align: left;
+    margin-bottom: 10%; 
+}
+
+h2, h3 {
+    text-align: left;
+}
+

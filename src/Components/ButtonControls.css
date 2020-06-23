@@ -1,0 +1,33 @@
+.button1 {
+    width: 80%; 
+    margin: auto; 
+    display: flex; 
+    justify-content: flex-start;
+}
+
+.button-container {
+    display: flex; 
+    width: 55%; 
+    padding: 15px; 
+    justify-content: flex-end;
+ 
+}
+
+.button {
+    padding: 1%; 
+    width: 22%; 
+    border-radius: 6px;
+    border: none;
+    margin-left: 5%;   
+}
+.gen-box {
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
+}
+.button-box {
+    width: 90%; 
+    display: flex; 
+    justify-content: flex-end;
+    overflow: 'auto'
+}
