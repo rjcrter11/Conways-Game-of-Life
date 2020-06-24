@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react'
+import React, { useState, useRef, useCallback, useEffect } from 'react'
 import { setUp, possibleNeighbors } from '../helperFunctions/helperFunctions'
 import './Grid.css'
 import Cell from './Cell'
@@ -20,12 +20,17 @@ const Grid = () => {
         return setUp(gridRows, gridCols)
     })
 
-    const runRef = useRef()
+    const runRef = useRef(runGame)
     runRef.current = runGame
+
+    useEffect(() => {
+        if (runRef.current) {
+            setGenerations(generations + 1)
+        }
+    }, [grid])
 
     const pressPlay = useCallback(() => {
         if (!runRef.current) {
-            genCount = 0
             return
         }
         setGrid(g => {
@@ -49,8 +54,7 @@ const Grid = () => {
                 }
             })
         })
-        setTimeout(pressPlay, gameSpeed, genCount++)
-        setGenerations(genCount)
+        setTimeout(pressPlay, gameSpeed)
     }, [gameSpeed, gridCols, gridRows])
 
     return (

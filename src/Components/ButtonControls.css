@@ -29,13 +29,14 @@
     outline: 0;
 }
 .button.stop {
-    background-color: red;
-    color: white; 
+    background-color: yellow;
+    color: rgb(71, 71, 71); 
 }
 
  .button.stop:hover {
-    color: red; 
+    color: rgb(71, 71, 71); 
     background-color: white;
+    border: 1px solid yellow;
 }
 
 .button.start {
@@ -44,7 +45,8 @@
 }
 .button.start:hover {
     background-color: white;
-    color: rgb(7, 209, 7)
+    color: rgb(7, 209, 7);
+    border: 1px solid rgb(7, 209, 7)
 }
 
 .button.clear {
@@ -53,7 +55,8 @@
 }
 .button.clear:hover {
     background-color: white;
-    color: black;
+    color: rgb(71, 71, 71);
+    border: 1px solid red; 
 }
 
 .button.random {
@@ -62,12 +65,13 @@
 }
 .button.random:hover {
     background-color: white;
-    color: rgb(38, 114, 230)
+    color: rgb(38, 114, 230);
+    border: 1px solid rgb(38, 114, 230);
 }
 
 
 .gen-box {
-    width: 25%;
+    width: 28%;
     display: flex;
     justify-content: flex-start;
     align-items: flex-end
