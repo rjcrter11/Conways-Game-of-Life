@@ -1,5 +1,5 @@
 import React, { useState, useRef, useCallback } from 'react'
-import { setUp } from '../helperFunctions/helperFunctions'
+import { setUp, possibleNeighbors } from '../helperFunctions/helperFunctions'
 import './Grid.css'
 import Cell from './Cell'
 import ButtonControls from './ButtonControls'
@@ -8,18 +8,6 @@ import produce from 'immer'
 import GridSizing from './GridSizing'
 
 
-
-const possibleNeighbors = [
-    [0, 1],
-    [0, -1],
-    [1, 0],
-    [1, 1],
-    [1, -1],
-    [-1, 0],
-    [-1, 1],
-    [-1, -1],
-];
-
 let genCount = 0;
 
 const Grid = () => {
@@ -27,7 +15,7 @@ const Grid = () => {
     const [generations, setGenerations] = useState(0)
     const [gameSpeed, setGameSpeed] = useState(500)
     const [gridRows, setGridRows] = useState(50)
-    const [gridCols, setGridCols] = useState(75)
+    const [gridCols, setGridCols] = useState(50)
     const [grid, setGrid] = useState(() => {
         return setUp(gridRows, gridCols)
     })
@@ -87,6 +75,7 @@ const Grid = () => {
                             cols={j}
                             runRef={runRef}
                             generations={generations}
+                            runGame={runGame}
                         />
                     )))}
                 </div>
@@ -104,6 +93,7 @@ const Grid = () => {
                 setGenerations={setGenerations}
                 gameSpeed={gameSpeed}
                 setGameSpeed={setGameSpeed}
+                genCount={genCount}
             />
         </>
     )

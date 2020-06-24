@@ -1,26 +1,71 @@
-.button1 {
-    width: 100%; 
-    margin: auto; 
-    margin-top: 2%; 
+.control-panel {
+    width: 61% ;
     display: flex; 
-    justify-content: center;
+    justify-content: flex-end;
+}
+
+.button-panel {
+    width: 59%; 
+    display: flex; 
+    justify-content: flex;
+    justify-content: flex-end;
 }
 
 .button-container {
     display: flex; 
-    width: 60%; 
+    width: 67%; 
     padding: 15px; 
-    
+    justify-content: space-between;
  
 }
 
 .button {
-    padding: 1%; 
+    padding: 2%; 
     width: 22%; 
     border-radius: 6px;
     border: none;
-    margin-left: 4%;   
+    margin-left: 4%; 
+    font-weight: 600; 
+    outline: 0;
 }
+.button.stop {
+    background-color: red;
+    color: white; 
+}
+
+ .button.stop:hover {
+    color: red; 
+    background-color: white;
+}
+
+.button.start {
+    background-color: rgb(7, 209, 7);
+    color: white;
+}
+.button.start:hover {
+    background-color: white;
+    color: rgb(7, 209, 7)
+}
+
+.button.clear {
+    color: white; 
+    background-color: rgb(80, 80, 80);
+}
+.button.clear:hover {
+    background-color: white;
+    color: black;
+}
+
+.button.random {
+    background-color:dodgerblue;
+    color:  white
+}
+.button.random:hover {
+    background-color: white;
+    color: rgb(38, 114, 230)
+}
+
+
 .gen-box {
     width: 25%;
     display: flex;
@@ -28,22 +73,22 @@
     align-items: flex-end
 }
 .button-box {
-    width: 30%; 
+    width: 50%; 
     display: flex; 
     justify-content: flex-start;
     overflow: 'auto'
 }
 
 label {
-    font-size: 0.85rem;
+    font-size: 1rem;
     font-weight: 600;
-    width: 100%; 
-    margin-right: 1%; 
+    width: 50%; 
+     
 }
 .input-box {
     display: flex; 
-    justify-content: flex-start;
-    width: 18%; 
+    justify-content: flex-end;
+    width: 25%; 
 }
 .input-box input {
     width: 42px; 
