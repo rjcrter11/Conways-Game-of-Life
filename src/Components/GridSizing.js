@@ -1,6 +1,6 @@
 import React from 'react'
 
-const GridSizing = ({ setGridRows, setGridCols }) => {
+const GridSizing = ({ setGridCols }) => {
 
     return (
         <div className='grid-size-container'>
@@ -8,14 +8,13 @@ const GridSizing = ({ setGridRows, setGridCols }) => {
             <div className='button-column'>
                 <button className='size-button' onClick={() => {
                     setGridCols(50)
-
-                }} >50x50</button>
+                }} >Small</button>
                 <button className='size-button' onClick={() => {
                     setGridCols(75)
-                }} >50x75</button>
+                }} >Medium</button>
                 <button className='size-button' onClick={() => {
                     setGridCols(100)
-                }} >50x100</button>
+                }} >Large</button>
             </div>
 
         </div>
