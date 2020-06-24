@@ -17,7 +17,7 @@ const Cell = (props) => {
                     gridCopy[rows][cols] = grid[rows][cols] ? 0 : 1;
                 })
                 setGrid(newGrid)
-                //console.log(newGrid)
+
             }}
         >
             <div style={{

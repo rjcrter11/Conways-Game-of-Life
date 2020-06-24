@@ -18,11 +18,13 @@ const possibleNeighbors = [
     [-1, 0],
     [-1, 1],
     [-1, -1],
-]
-let generations = 0;
-const Grid = () => {
+];
 
+let genCount = 0;
+
+const Grid = () => {
     const [runGame, setRunGame] = useState(false)
+    const [generations, setGenerations] = useState(0)
     const [gameSpeed, setGameSpeed] = useState(500)
     const [gridRows, setGridRows] = useState(50)
     const [gridCols, setGridCols] = useState(75)
@@ -30,17 +32,12 @@ const Grid = () => {
         return setUp(gridRows, gridCols)
     })
 
-
     const runRef = useRef()
     runRef.current = runGame
 
-
-
-
     const pressPlay = useCallback(() => {
         if (!runRef.current) {
-            generations = 0
-
+            genCount = 0
             return
         }
         setGrid(g => {
@@ -60,18 +57,16 @@ const Grid = () => {
                         } else if (g[i][j] === 0 && neighbors === 3) {
                             gridCopy[i][j] = 1
                         }
-
                     }
                 }
             })
         })
-        setTimeout(pressPlay, gameSpeed, generations++)
-
+        setTimeout(pressPlay, gameSpeed, genCount++)
+        setGenerations(genCount)
     }, [gameSpeed, gridCols, gridRows])
 
     return (
         <>
-
             <div className='main-grid-container'>
                 <GridSizing
                     setGridRows={setGridRows}
@@ -82,7 +77,6 @@ const Grid = () => {
                     display: 'grid',
                     gridTemplateColumns: `repeat(${gridCols}, 10px)`,
                     gridRowGap: 0,
-                    overflow: 'none'
                 }}>
                     {grid.map((rows, i) => rows.map((cols, j) => (
                         <Cell
@@ -98,8 +92,6 @@ const Grid = () => {
                 </div>
                 <Rules />
             </div>
-
-
             <ButtonControls
                 setGrid={setGrid}
                 gridRows={gridRows}
@@ -109,10 +101,10 @@ const Grid = () => {
                 runGame={runGame}
                 setRunGame={setRunGame}
                 generations={generations}
+                setGenerations={setGenerations}
                 gameSpeed={gameSpeed}
                 setGameSpeed={setGameSpeed}
             />
-
         </>
     )
 }

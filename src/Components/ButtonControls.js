@@ -3,7 +3,7 @@ import './ButtonControls.css'
 import { setUp, randomize } from '../helperFunctions/helperFunctions'
 
 const ButtonControls = (props) => {
-    let { setGrid, gridRows, gridCols, runGame, setRunGame, runRef, pressPlay, gameSpeed, setGameSpeed } = props
+    let { setGrid, gridRows, gridCols, runGame, setRunGame, runRef, pressPlay, gameSpeed, setGameSpeed, setGenerations } = props
 
     const handleChange = (e) => {
         e.preventDefault()
@@ -21,11 +21,10 @@ const ButtonControls = (props) => {
                         setRunGame(!runGame)
                         runRef.current = true
                         pressPlay()
-
                     }} >{runGame ? 'Stop' : 'Start'}</button>
                     <button className='button' onClick={() => {
+                        setGenerations(0)
                         setGrid(setUp(gridRows, gridCols))
-
                     }} >Clear</button>
                     <button className='button' onClick={() => {
                         setGrid(randomize(gridRows, gridCols))
