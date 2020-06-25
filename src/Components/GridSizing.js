@@ -16,7 +16,6 @@ const GridSizing = ({ setGridCols }) => {
                     setGridCols(100)
                 }} >Large</button>
             </div>
-
         </div>
     )
 }

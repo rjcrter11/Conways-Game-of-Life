@@ -1,13 +1,15 @@
+
+// Initializes blank grid (all zeros)
 export const setUp = (row, cols) => {
     let rows = []
     for (let i = 0; i < row; i++) {
         rows.push(Array(cols).fill(0))
-
     }
     return rows
+
 }
 
-
+// Initializes grid with random live cells 
 export const randomize = (row, col) => {
     let rows = []
     for (let i = 0; i < row; i++) {
@@ -15,7 +17,7 @@ export const randomize = (row, col) => {
     }
     return rows
 }
-
+// Changes cell color depending on generation
 export const colorGenerator = (grid, gen) => {
     let rgb1 = Math.floor(Math.random() * 256)
     let rgb2 = Math.floor(Math.random() * 256)
@@ -39,6 +41,7 @@ export const colorGenerator = (grid, gen) => {
     }
 }
 
+// Neighbors list 
 export const possibleNeighbors = [
     [0, 1],
     [0, -1],

@@ -1,13 +1,8 @@
+
+/* =========== Top Div ========== */
 .control-panel {
     width: 61% ;
     display: flex; 
-    justify-content: flex-end;
-}
-
-.button-panel {
-    width: 59%; 
-    display: flex; 
-    justify-content: flex;
     justify-content: flex-end;
 }
 
@@ -16,8 +11,17 @@
     width: 67%; 
     padding: 15px; 
     justify-content: space-around;
- 
 }
+
+/* === Generations Counter === */
+.gen-box {
+    width: 28%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end
+}
+
+/* === Speed DropDown === */
 .dropdown {
     width: 50%; 
     display: flex; 
@@ -26,10 +30,27 @@
 
 .dropdown select {
     width: 100px;
-    
 }
-.dropdown label {
-     font-weight: 500; 
+label {
+    font-size: 1rem;
+    font-weight: 500;
+    width: 50%; 
+}
+
+/* ========= Bottom Div ========= */
+
+.button-panel {
+    width: 59%; 
+    display: flex; 
+    justify-content: flex;
+    justify-content: flex-end;
+}
+
+.button-box {
+    width: 50%; 
+    display: flex; 
+    justify-content: flex-start;
+    overflow: 'auto'
 }
 
 .button {
@@ -41,6 +62,7 @@
     font-weight: 600; 
     outline: 0;
 }
+
 .button.stop {
     background-color: yellow;
     color: rgb(71, 71, 71); 
@@ -56,6 +78,7 @@
     background-color: rgb(7, 209, 7);
     color: white;
 }
+
 .button.start:hover {
     background-color: white;
     color: rgb(7, 209, 7);
@@ -66,6 +89,7 @@
     color: white; 
     background-color: rgb(80, 80, 80);
 }
+
 .button.clear:hover {
     background-color: white;
     color: rgb(71, 71, 71);
@@ -76,6 +100,7 @@
     background-color:dodgerblue;
     color:  white
 }
+
 .button.random:hover {
     background-color: white;
     color: rgb(38, 114, 230);
@@ -83,30 +108,7 @@
 }
 
 
-.gen-box {
-    width: 28%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-end
-}
-.button-box {
-    width: 50%; 
-    display: flex; 
-    justify-content: flex-start;
-    overflow: 'auto'
-}
 
-label {
-    font-size: 1rem;
-    font-weight: 600;
-    width: 50%; 
-     
-}
-.input-box {
-    display: flex; 
-    justify-content: flex-end;
-    width: 25%; 
-}
-.input-box input {
-    width: 42px; 
-}
+
+
+
