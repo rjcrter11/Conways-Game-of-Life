@@ -3,8 +3,7 @@ import './ButtonControls.css'
 import { setUp, randomize } from '../helperFunctions/helperFunctions'
 
 const ButtonControls = (props) => {
-    let { setGrid, gridRows, gridCols, runGame, setRunGame, runRef, pressPlay, gameSpeed, setGameSpeed, setGenerations } = props
-
+    const { setGrid, gridRows, gridCols, runGame, setRunGame, runRef, pressPlay, gameSpeed, setGameSpeed, setGenerations } = props
 
     const handleChange = (e) => {
         e.preventDefault()
@@ -28,28 +27,37 @@ const ButtonControls = (props) => {
                             </select>
                         </label>
                     </div>
-
                 </div>
             </div>
             <div className='button-panel' >
                 <div className='button-box'>
-                    <button className={runGame ? 'button stop' : 'button start'} onClick={() => {
-                        setRunGame(!runGame)
-                        runRef.current = true
-                        pressPlay()
-                    }} >{runGame ? 'Pause' : 'Start'}</button>
-                    <button className='button clear' onClick={() => {
-                        setGenerations(0)
-                        setGrid(setUp(gridRows, gridCols))
-                    }} >Clear</button>
-                    <button className='button random' onClick={() => {
-                        setGrid(randomize(gridRows, gridCols))
-                    }}>Random</button>
-
+                    <button
+                        className={runGame ? 'button stop' : 'button start'}
+                        onClick={() => {
+                            setRunGame(!runGame)
+                            if (!runGame) {
+                                runRef.current = true
+                                pressPlay()
+                            }
+                        }}
+                    >{runGame ? 'Pause' : 'Start'}
+                    </button>
+                    <button
+                        className='button clear'
+                        onClick={() => {
+                            setGenerations(0)
+                            setGrid(setUp(gridRows, gridCols))
+                        }}>Clear
+                    </button>
+                    <button
+                        className='button random'
+                        onClick={() => {
+                            setGrid(randomize(gridRows, gridCols))
+                        }}>Random
+                    </button>
                 </div>
             </div>
         </>
-
     )
 }
 export default ButtonControls
