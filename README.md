@@ -1,3 +1,7 @@
+![GitHub](https://img.shields.io/github/license/rjcrter11/Conways-Game-of-Life?style=flat-square)
+![GitHub pull request check state](https://img.shields.io/github/status/s/pulls/rjcrter11/Conways-Game-of-Life/6?label=zeit&logo=zeit&style=flat-square)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 App deployed at [conways-game-of-life](https://conways-game-of-life-two.vercel.app/)
 
 # Conway's Game of life
