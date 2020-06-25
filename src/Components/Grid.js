@@ -1,10 +1,10 @@
-import React, { useState, useRef, useCallback, useEffect } from 'react'
+import React, { useState, useRef, useCallback } from 'react'
+import produce from 'immer'
 import { setUp, possibleNeighbors } from '../helperFunctions/helperFunctions'
 import './Grid.css'
 import Cell from './Cell'
 import ButtonControls from './ButtonControls'
 import Rules from './Rules'
-import produce from 'immer'
 import GridSizing from './GridSizing'
 
 
@@ -15,6 +15,8 @@ const Grid = () => {
     const [gameSpeed, setGameSpeed] = useState(500)
     const [gridRows, setGridRows] = useState(50)
     const [gridCols, setGridCols] = useState(50)
+    // init state in a function, to ensure it only runs once on 
+    // state initialization
     const [grid, setGrid] = useState(() => {
         return setUp(gridRows, gridCols)
     })
@@ -23,11 +25,9 @@ const Grid = () => {
     const runRef = useRef(runGame)
     runRef.current = runGame
 
-    useEffect(() => {
-        if (runRef.current) {
-            setGenerations(g => g + 1)
-        }
-    }, [grid])
+
+
+
     // useCallback to keep pressplay from being recreated every render
     const pressPlay = useCallback(() => {
         if (!runRef.current) {
@@ -58,8 +58,17 @@ const Grid = () => {
                 }
             })
         })
+        setGenerations(g => g + 1)
         setTimeout(pressPlay, gameSpeed)
     }, [gameSpeed, gridCols, gridRows])
+
+    // set div's display to grid
+    const colStyle = {
+        backgroundColor: 'black',
+        display: 'grid',
+        gridTemplateColumns: `repeat(${gridCols}, 10px)`,
+        gridRowGap: 0
+    }
 
     return (
         <>
@@ -68,15 +77,8 @@ const Grid = () => {
                     setGridRows={setGridRows}
                     setGridCols={setGridCols}
                 />
-                <div style={{
-                    backgroundColor: 'black',
-                    display: 'grid',
-                    gridTemplateColumns: `repeat(${gridCols}, 10px)`,
-                    gridRowGap: 0,
-                }}
-                // set display to grid, map grid and rows 
-                >
-                    {grid.map((rows, i) => rows.map((cols, j) => (
+                <div style={colStyle}>
+                    {grid.map((rows, i) => rows.map((cols, j) => ( // map grid and rows
                         <Cell
                             key={`${i}-${j}`}
                             grid={grid}
@@ -107,4 +109,8 @@ const Grid = () => {
         </>
     )
 }
+
+
+
 export default Grid
+
