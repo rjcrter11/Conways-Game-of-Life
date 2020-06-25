@@ -8,7 +8,6 @@ import produce from 'immer'
 import GridSizing from './GridSizing'
 
 
-let genCount = 0;
 
 const Grid = () => {
     const [runGame, setRunGame] = useState(false)
@@ -25,7 +24,7 @@ const Grid = () => {
 
     useEffect(() => {
         if (runRef.current) {
-            setGenerations(generations + 1)
+            setGenerations(g => g + 1)
         }
     }, [grid])
 
@@ -97,7 +96,6 @@ const Grid = () => {
                 setGenerations={setGenerations}
                 gameSpeed={gameSpeed}
                 setGameSpeed={setGameSpeed}
-                genCount={genCount}
             />
         </>
     )

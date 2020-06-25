@@ -15,8 +15,21 @@
     display: flex; 
     width: 67%; 
     padding: 15px; 
-    justify-content: space-between;
+    justify-content: space-around;
  
+}
+.dropdown {
+    width: 50%; 
+    display: flex; 
+    justify-content: flex-end;
+}
+
+.dropdown select {
+    width: 100px;
+    
+}
+.dropdown label {
+     font-weight: 500; 
 }
 
 .button {

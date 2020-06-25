@@ -5,6 +5,7 @@ import { setUp, randomize } from '../helperFunctions/helperFunctions'
 const ButtonControls = (props) => {
     let { setGrid, gridRows, gridCols, runGame, setRunGame, runRef, pressPlay, gameSpeed, setGameSpeed, setGenerations } = props
 
+
     const handleChange = (e) => {
         e.preventDefault()
         setGameSpeed(e.target.value)
@@ -17,13 +18,15 @@ const ButtonControls = (props) => {
                     <div className='gen-box'>
                         <h3>Generations: {props.generations}</h3>
                     </div>
-                    <div className='input-box'>
-                        <label>Speed</label>
-                        <input
-                            type="number"
-                            value={gameSpeed}
-                            onChange={handleChange}
-                        />
+                    <div className='dropdown' >
+                        <label>
+                            Playback Speed
+                            <select value={gameSpeed} onChange={handleChange} >
+                                <option value={1000} >Slow</option>
+                                <option value={500}>Normal</option>
+                                <option value={100}>Fast</option>
+                            </select>
+                        </label>
                     </div>
 
                 </div>
