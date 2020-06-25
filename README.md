@@ -1,68 +1,37 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Conway's Game of life
+ This project is my take on Conway's Game of Life, a deceptively simple simulation of an environment capable of producing great complexity with a few simple rules.
 
-## Available Scripts
+ ## About
+ ### John Conway
+ John Conway was an English mathematician, active in the theory of finite groups, knot theory, number theory , combinatorial game theory and coding theory. His invention of the cellular automaton (the Game of Life) is his most notable contribution. He died recently, at age 82, of complications from COVID-19. 
+ ### The Game
+The Game of Life is an infinite, two-dimensional grid of square cells in one of two states - alive or dead. Each cell interacts with its eight neighbors to determine its state. 
+1. Any live cell with fewer than two live neighbors dies
+2. Any live cell with two or three live neighbors lives to the next generation
+3. Any live cell with more than three live neighbors dies
+4. Any dead cell with exactly three live neighbors becomes a live cell
 
-In the project directory, you can run:
+ ![Some Life shapes](https://www.researchgate.net/profile/Yan_Liu40/publication/274743186/figure/fig3/AS:667642776006657@1536189850143/Element-of-cellular-automata-CA-top-with-Conways-game-of-life-as-illustration.png)
+ From [ResearchGate](https://www.researchgate.net/figure/Element-of-cellular-automata-CA-top-with-Conways-game-of-life-as-illustration_fig3_274743186)
 
-### `yarn start`
+The first generation is created by appllying the above rules simultaneously to every cell in the seed. Births and deaths occur simultaneously. The rules continue to be applied to create further generations. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Cellular Automata
+A cellular automaton is a discrete model studied in automata theory. It consists of data typically stored in a 2D grid, with a simple set of rules describing how the value in a cell on the grid changes over time. 
+Each round of the simulation checks the current state of the grid, then uses double buffering to create a new grid to use, swapping between the two grids to update. 
+### Turing Completeness
+A system of data manipulation rules is said to be Turing-complete if it can be used to simulate any Turing machine, meaning that the system is able to recognize or decide other data-manipulation rule sets. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Theoretically, the Game of Life fits this description, as anything that can be computed algorithmically can be computed within it. 
 
-### `yarn test`
+From [Wikipedia](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Todo/Wishlist for future iterations
+    - Change the implementation of generations, so that each cell can count its generations
+    - Make cell sizes grow larger the more generations they have survived
+    - Implement some sample configurations that can be loaded and ran
+    - Add the ability to skip generations
+    - Make the board more creative in aesthetic and function 
+    - Fix UI bug that incorrectly sizes the board when changing its size until you click start or radomize the cells in the board 
+  
