@@ -1,7 +1,6 @@
 import React from 'react'
 import './ButtonControls.css'
 import { setUp, randomize } from '../helperFunctions/helperFunctions'
-
 const ButtonControls = (props) => {
     const { setGrid, gridRows, gridCols, runGame, setRunGame, runRef, pressPlay, gameSpeed, setGameSpeed, setGenerations } = props
 
@@ -55,6 +54,9 @@ const ButtonControls = (props) => {
                             setGrid(randomize(gridRows, gridCols))
                         }}>Random
                     </button>
+                    {/* <button onClick={() => {
+                        setGrid(pattern(gridRows, gridCols))
+                    }}  >Pattern</button> */}
                 </div>
             </div>
         </>
