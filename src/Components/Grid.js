@@ -25,9 +25,6 @@ const Grid = () => {
     const runRef = useRef(runGame)
     runRef.current = runGame
 
-
-
-
     // useCallback to keep pressplay from being recreated every render
     const pressPlay = useCallback(() => {
         if (!runRef.current) {
@@ -94,6 +91,7 @@ const Grid = () => {
                 <Rules />
             </div>
             <ButtonControls
+                grid={grid}
                 setGrid={setGrid}
                 gridRows={gridRows}
                 gridCols={gridCols}
