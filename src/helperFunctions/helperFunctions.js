@@ -17,6 +17,23 @@ export const randomize = (row, col) => {
     }
     return rows
 }
+
+// export const pattern = (row, col) => {
+//     let rows = []
+//     for (let i = 0; i < row; i++) {
+//         for (let j = 0; j < col; j++) {
+//             if (col[j] === 25 && row[i] === 25) {
+//                 rows.push(Array(col).fill(1))
+//                 console.log(col)
+//             } else {
+//                 rows.push(Array(col).fill(0))
+//             }
+//         }
+//     }
+
+//     return rows
+// }
+
 // Changes cell color depending on generation
 export const colorGenerator = (grid, gen) => {
     let rgb1 = Math.floor(Math.random() * 256)
